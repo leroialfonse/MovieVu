@@ -2,11 +2,12 @@
 // Api - OMDB : http://www.omdbapi.com/?i=tt3896198&apikey=94961933
 
 async function main() {
+
     const movies = await fetch(`http://www.omdbapi.com/?apikey=94961933&s=here`);
     const moviesData = await movies.json();
     //   Had to drill down one more level through the omdbapi to expose the array.
     const allMovies = moviesData.Search;
-    console.log(allMovies)
+    // console.log(allMovies)
 
     const moviesListEl = document.querySelector('.movie-list');
 
@@ -15,9 +16,10 @@ async function main() {
 
         allMovies.map((info) => movieHTML(info)
         ).join('')
+   
 }
 
-// main();
+main();
 
 
 
