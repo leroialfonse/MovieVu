@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovieVue!</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieVue2!</title>
+    <!-- My javascript -->
     <script src="index.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- My FA kit. -->
+    <script
+      src="https://kit.fontawesome.com/87daa82b97.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="overlay">
+      <nav>
+        <div class="header__logo">
+          <div class="header__logo--brand">
+            <img
+              src="/assets/MovieVue.png"
+              class="header__logo--img"
+              alt="MovieVue Camera"
+            />
+            <h1 class="header__logo--title">movieVue</h1>
+          </div>
+        </div>
+        <ul class="header__links">
+          <li><a href="">Search Movies</a></li>
+          <li class="contact"><a href="">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <div class="container">
-        <div class="row">
-            <label class="movie__search--label">
-        Search by Title
-      </label>
-      <input type="text" id="search-input"   name="" placeholder="Enter a Movie Title to search!" >
-      <button type="submit" onclick="searchMovies()"> Search</button>
-        <div class="movie-list">
+      <div class="row">
+        <section id="search">
+          <label class="movie__search--label">Find Your Movie</label>
+
+          <div class="input-wrap">
+            <input
+              type="text"
+              id="search-input"
+              name=""
+              placeholder="Search By Movie Title"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass mag"
+              style="color: #b197fc"
+              onclick="searchMovies()"
+            ></i>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="container results">
+      <div class="selections">
+        <h2>Search Results:</h2>
+      </div>
+      <div class="movie-list">
         <div class="movie">
           <div class="movie-card">
             <div class="movie-card__container">
-              <h3>Movie Title</h4>
-<div class="movie__search--container">
-      
-    </div>
-                <!--  -->
-                <!-- <p><b>Email:</b> email@email.com</p>
-                <p><b>Phone:</b> 0000000000</p>
-                <p><b>Website:</b> <a href="https://website.website" target="_blank">website.website</a></p> -->
+    
+      <div class="movies movies__loading movies__loading--img product__content">
+        <img
+          src="assets/stripoll.png"
+          alt="Loading Titles"
+          class="product__card--img"
+        />
+        <p class="product__title"></p>
+        <p class="product__desc"></p>
+        <p class="product__detail"></p>
+      </div>
+              <div class="movie__search--container"></div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</body>
 
-</html>
+       
+        </div>
+        <!-- </div> -->
+      </div>
+      
     </div>
-</body>
+  </body>
 </html>
