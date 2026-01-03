@@ -285,8 +285,8 @@ width: 100%;
 
     } */
 
-   .movies__loading--img {
-      display: none;
+   .movies__loading .movies__loading--img {
+      /* display: none; */
     }
 
     
