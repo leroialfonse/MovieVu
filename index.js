@@ -34,7 +34,7 @@
     if (!searchTerm) {
       const moviesWrapper = document.querySelector('.movies')
       moviesWrapper.classList += ' books_loading'
-    const films = getMovies();
+      await getMovies();
       moviesWrapper.classList.remove('.books_loading')
   }
   else {
@@ -63,7 +63,7 @@
 
     setTimeout(() => {
       getMovies();
-    }, 100000)
+    }, 3000)
 
 
 
@@ -105,5 +105,5 @@ async function getMovies(){
 
 }
 
-// getMovies();
+getMovies();
 
