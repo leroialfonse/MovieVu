@@ -200,10 +200,10 @@ input {
   top: 300px;
 }
 
-.selections {
+/* .selections {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .movie-list {
   display: flex;
@@ -211,7 +211,6 @@ input {
   justify-content: center;
   margin: 0 auto;
   padding: 0 10px;
-  max-width: calc(100 / 3);
 }
 
 .movie {
@@ -225,7 +224,7 @@ input {
   transition: 0.3s;
   cursor: pointer;
   border-radius: 10px;
-  max-width: calc(100 / 3);
+  max-width: calc(100% / 3);
 }
 
 .movie-card h3 {
@@ -270,30 +269,9 @@ p {
 
 .movies__loading .movies__loading--img {
   display: block;
+border: 10px solid orange;
 }
 
-.product__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
-
-.product__card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-}
 
 .product__card--img {
   width: 90px;
@@ -302,21 +280,6 @@ p {
   overflow: hidden;
   animation: spin 2000ms infinite linear;
   margin-bottom: 2rem;
-}
-
-.product-image::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.5),
-    transparent
-  );
-  transform: translateX(-100%);
-  animation: shimmer 2s infinite;
 }
 
 .product__title,
@@ -339,23 +302,6 @@ p {
   width: 90%;
 }
 
-/* .product-price {
-      height: 16px;
-      width: 40%;
-      background: linear-gradient(90deg, #f0f0f0, #e6e6e6);
-      border-radius: 4px;
-      animation: pulse 1.5s infinite alternate;
-      animation-delay: 0.2s;
-    }
-
-    .product-rating {
-      height: 12px;
-      width: 60%;
-      background: linear-gradient(90deg, #f0f0f0, #e6e6e6);
-      border-radius: 4px;
-      animation: pulse 1.5s infinite alternate;
-      animation-delay: 0.4s;
-    } */
 
 @keyframes pulse {
   0% {
@@ -366,44 +312,11 @@ p {
   }
 }
 
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-.loading-indicator {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  animation: fadeInOut 2s infinite alternate;
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
   }
 }
