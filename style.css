@@ -209,12 +209,14 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
-  padding: 0 10px;
+  margin: 12px 8px;
+  padding: 10px;
 }
 
 .movie {
-  width: 50%;
+  width: 100%;
+/* border: 10px solid orange; */
+
 }
 
 .movie-card {
@@ -227,13 +229,61 @@ input {
   max-width: calc(100% / 3);
 }
 
+
 .movie-card h3 {
-  width: 30%;
+  width: 90%;
 }
+
 .movie-card h3,
 p {
   color: #242424;
+  text-align: center;
+  font-weight: 600;
+
 }
+
+.tooltip{
+  color:#929aa6;
+  cursor: not-allowed;
+}
+
+/* 1. The container needs relative positioning */
+.tooltip {
+  position: relative;
+  display: inline-block; /* Allows the element to wrap its content */
+  cursor: help; /* Optional: changes the cursor to a question mark */
+}
+
+/* 2. Style the tooltip content itself (using ::after pseudo-element) */
+.tooltip::after {
+  content: attr(data-tooltip); /* Retrieves text from the data attribute */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Hidden by default, useful for transitions */
+  
+  /* Positioning */
+  position: absolute;
+  bottom: 100%; /* Position above the hovered element */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the tooltip horizontally */
+  
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  
+  /* Smooth transition */
+  transition: opacity 0.3s ease-in-out; 
+}
+
+/* 3. Show the tooltip on hover */
+.tooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 .movie-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -241,6 +291,15 @@ p {
 
 .movie-card__container {
   padding: 2px 16px;
+
+}
+
+.card-img{
+  width:90%;
+  margin: 2px;
+  text-align: center;
+  border: 2px solid green;
+  /* display: flex;  */
 }
 
 .movie__search--label {
@@ -248,24 +307,25 @@ p {
   text-align: center;
   margin-bottom: 36px;
   letter-spacing: 8px;
+
 }
 
 .movie__search--container {
   display: block;
   z-index: 10;
   margin: 5rem;
+  
 }
 
 .loading {
   display: none;
+
 }
+
 .movies__loading {
   display: block;
 }
 
-.movies__loading .movie-list {
-  display: none;
-}
 
 .movies__loading .movies__loading--img {
   display: block;

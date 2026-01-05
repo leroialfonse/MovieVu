@@ -123,14 +123,11 @@ const moviesListEl = document.querySelector(".movie-list");
 const input = document.querySelector("#search-input");
 const results = document.querySelector(".results");
 
-setTimeout(() => {
-  getMovies();
-}, 1000000);
 
 function searchMovies() {
   let searchTerm = input.value;
   if (!searchTerm.length > 0) {
-    alert("Please enter a movie name");
+    alert("Please enter a movie title to search.");
     return;
   }
   getMovies(searchTerm);
@@ -146,14 +143,16 @@ async function getMovies(searchTerm) {
   const moviesData = await movies.json();
   //   Had to drill down one more level through the omdbapi to expose the array.
   const allMovies = moviesData.Search;
+  // SetTimeout here, to trigger the data to display after a wait. Need the timer to block the appearance of the data. 
   setTimeout(() => {
     moviesListEl.innerHTML = allMovies
       .map((info) => {
         return ` <div class="movie-card">
                   <div class="movie-card__container">
-                  <img src=${info.Poster}>
+                  <img src=${info.Poster} class="card-img">
                     <h3>${info.Title}</h4>
                       <p>${info.Year}</p>
+                      <p class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</p>
                   </div>
                 </div>`;
       })
