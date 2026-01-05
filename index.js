@@ -117,7 +117,7 @@
 
 let movies;
 
-// const moviesWrapper = document.querySelector(".movies");
+const moviesWrapper = document.querySelector(".movies");
 const loading = document.querySelector(".loading");
 const moviesListEl = document.querySelector(".movie-list");
 const input = document.querySelector("#search-input");
@@ -135,8 +135,7 @@ function searchMovies() {
 
 async function getMovies(searchTerm) {
   loading.classList.add("movies__loading");
-  // results.classList.add("movies__loading");
-
+  results.classList.add("movies__loading");
   moviesListEl.innerHTML = "";
   const movies = await fetch(
     `http://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
@@ -150,8 +149,8 @@ async function getMovies(searchTerm) {
       .map((info) => {
         return ` <div class="movie-card">
                   <div class="movie-card__container">
-                  <img src=${info.Poster} class="movie__card--img">
-                    <h3>${info.Title}</h3>
+                  <img src=${info.Poster} class="card-img">
+                    <h3>${info.Title}</h4>
                       <p>${info.Year}</p>
                       <p class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</p>
                   </div>
@@ -160,7 +159,7 @@ async function getMovies(searchTerm) {
       .slice(0, 6)
       .join("");
     loading.classList.remove("movies__loading");
-    // results.classList.remove("movies__loading");
+    results.classList.remove("movies__loading");
   }, 3000);
 }
 

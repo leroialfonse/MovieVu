@@ -1,398 +1,382 @@
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-  * {
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
+* {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: red;
+  font-size: 36px;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  margin: 0 12px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.row {
+  max-width: 1200px;
+}
+
+/* Header */
+
+header {
+  /* background-image: url("https://static.vecteezy.com/system/resources/thumbnails/044/514/545/small/background-a-movie-theater-where-love-stories-are-unfolding-on-the-big-screen-and-the-smell-of-popcorn-fills-the-air-photo.jpg"); */
+  /* background-image: url('assets/theater.png'); */
+  background-image: url("assets/editTheater.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-attachment: inherit;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 440px;
+  margin-bottom: 120px;
+}
+
+.overlay {
+  border-image: linear-gradient(hsla(240, 33%, 79%, 0.3), hsla(0, 2%, 22%, 0.3))
+    fill 1;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.header__logo--brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo--title {
+  font-size: 48px;
+  font-weight: 300;
+}
+.header__logo--img {
+  height: 160px;
+  width: 200px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header__links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+}
+
+.contact {
+  background-color: green;
+  border-radius: 24px;
+  padding: 8px 12px;
+}
+
+.contact:hover {
+  background-color: rgb(9, 74, 9);
+  transform: scale(1.1);
+}
+
+.input-wrap {
+  width: 100%;
+  max-width: 1000px;
+  position: s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 140px;
+}
+
+input {
+  color: rgba(0, 0, 0, 0.87);
+  width: 80%;
+  max-width: 900px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 30px;
+  padding-left: 30px;
+}
+
+#search {
+  position: relative;
+  top: 120px;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Header*/
+
+.header__email {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  border: 3px solid green;
+}
+
+.header__email--input {
+  width: 100%;
+  padding: 20px 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.header__email--placeholder {
+  position: absolute;
+  left: 32px;
+  top: 24px;
+  color: #a0aec0;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1;
+  text-align: center;
+}
+
+.header__email--button {
+  position: absolute;
+  top: 72px;
+  width: 100%;
+}
+
+.mag {
+  font-size: 36px;
+  position: relative;
+  /* position: relative; */
+  bottom: 50px;
+  left: 320px;
+  cursor: pointer;
+}
+
+.mag:hover {
+  transform: scale(1.1);
+}
+
+/* Results */
+
+.results {
+  position: relative;
+  top: 300px;
+}
+
+/* .selections {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 12px 8px;
+  padding: 10px;
+}
+
+.movie {
+  width: 100%;
+/* border: 10px solid orange; */
+
+}
+
+.movie-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+  max-width: calc(100% / 3);
+}
+
+
+.movie-card h3 {
+  width: 90%;
+}
+
+.movie-card h3,
+p {
+  color: #242424;
+  text-align: center;
+  font-weight: 600;
+
+}
+
+.tooltip{
+  color:#929aa6;
+  cursor: not-allowed;
+}
+
+/* 1. The container needs relative positioning */
+.tooltip {
+  position: relative;
+  display: inline-block; /* Allows the element to wrap its content */
+  cursor: help; /* Optional: changes the cursor to a question mark */
+}
+
+/* 2. Style the tooltip content itself (using ::after pseudo-element) */
+.tooltip::after {
+  content: attr(data-tooltip); /* Retrieves text from the data attribute */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Hidden by default, useful for transitions */
+  
+  /* Positioning */
+  position: absolute;
+  bottom: 100%; /* Position above the hovered element */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the tooltip horizontally */
+  
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  
+  /* Smooth transition */
+  transition: opacity 0.3s ease-in-out; 
+}
+
+/* 3. Show the tooltip on hover */
+.tooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.movie-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.movie-card__container {
+  padding: 2px 16px;
+
+}
+
+.card-img{
+  width:90%;
+  margin: 2px;
+  text-align: center;
+  border: 2px solid green;
+  /* display: flex;  */
+}
+
+.movie__search--label {
+  font-size: 46px;
+  text-align: center;
+  margin-bottom: 36px;
+  letter-spacing: 8px;
+
+}
+
+.movie__search--container {
+  display: block;
+  z-index: 10;
+  margin: 5rem;
+  
+}
+
+.loading {
+  display: none;
+
+}
+
+.movies__loading {
+  display: block;
+}
+
+
+.movies__loading .movies__loading--img {
+  display: block;
+border: 10px solid orange;
+}
+
+
+.product__card--img {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  overflow: hidden;
+  animation: spin 2000ms infinite linear;
+  margin-bottom: 2rem;
+}
+
+.product__title,
+.product__desc,
+.product__detail {
+  height: 14px;
+  background: linear-gradient(90deg, #f0f0f0, #e6e6e6);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.product__title {
+  width: 50%;
+}
+.product__desc {
+  width: 70%;
+}
+
+.product__detail {
+  width: 90%;
+}
+
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
   }
-
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  h2 {
-    color: red;
-    font-size: 36px;
-    padding: 0 20px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  li {
-    margin: 0 12px;
-  }
-
-  .container {
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  .row {
-    max-width: 1200px;
-  }
-
-  /* Header */
-
-  header {
-    /* background-image: url("https://static.vecteezy.com/system/resources/thumbnails/044/514/545/small/background-a-movie-theater-where-love-stories-are-unfolding-on-the-big-screen-and-the-smell-of-popcorn-fills-the-air-photo.jpg"); */
-    /* background-image: url('assets/theater.png'); */
-    background-image: url("assets/editTheater.png");
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: cover;
-    /* background-attachment: fixed; */
-    background-attachment: inherit;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 440px;
-    margin-bottom: 120px;
-  }
-
-  .overlay {
-    border-image: linear-gradient(hsla(240, 33%, 79%, 0.3), hsla(0, 2%, 22%, 0.3))
-      fill 1;
-  }
-
-  .header__logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1100px;
-  }
-
-  .header__logo--brand {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .header__logo--title {
-    font-size: 48px;
-    font-weight: 300;
-  }
-  .header__logo--img {
-    height: 160px;
-    width: 200px;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-
-  .header__links {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 24px;
-  }
-
-  .contact {
-    background-color: green;
-    border-radius: 24px;
-    padding: 8px 12px;
-  }
-
-  .contact:hover {
-    background-color: rgb(9, 74, 9);
-    transform: scale(1.1);
-  }
-
-  .input-wrap {
-    width: 100%;
-    max-width: 1000px;
-    position: s;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 140px;
-  }
-
-  input {
-    color: rgba(0, 0, 0, 0.87);
-    width: 80%;
-    max-width: 900px;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 30px;
-    padding-left: 30px;
-  }
-
-  #search {
-    position: relative;
-    top: 120px;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  /*Header*/
-
-  .header__email {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    border: 3px solid green;
-  }
-
-  .header__email--input {
-    width: 100%;
-    padding: 20px 32px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .header__email--placeholder {
-    position: absolute;
-    left: 32px;
-    top: 24px;
-    color: #a0aec0;
-    font-size: 16px;
-    font-weight: 500;
-    z-index: 1;
-    text-align: center;
-  }
-
-  .header__email--button {
-    position: absolute;
-    top: 72px;
-    width: 100%;
-  }
-
-  .mag {
-    font-size: 36px;
-    position: relative;
-    /* position: relative; */
-    bottom: 50px;
-    left: 320px;
-    cursor: pointer;
-  }
-
-  .mag:hover {
-    transform: scale(1.1);
-  }
-
-  /* Results */
-
-  .results {
-    position: relative;
-    top: 300px;
-
-  }
-
-  .movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 16px;
-    padding: 10px;
-  }
-
-  .movie {
-    width: 100%;
-
-  }
-
-  .movie-card {
-          display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      margin: 12px;
-      transition: 0.3s;
-      cursor: pointer;
-      border-radius: 10px;
-      max-width: calc(80% / 3);
-      padding: 8px;
-  }
-
-
-  .movie-card h3 {
-    width: 90%;
-  }
-
-  .movie-card h3,
-  p {
-    color: #242424;
-    text-align: center;
-    font-weight: 600;
-
-  }
-
-  .tooltip{
-    color:#929aa6;
-    cursor: not-allowed;
-  }
-
-  /* 1. The container needs relative positioning */
-  .tooltip {
-    position: relative;
-    display: inline-block; /* Allows the element to wrap its content */
-    cursor: help; /* Optional: changes the cursor to a question mark */
-  }
-
-  /* 2. Style the tooltip content itself (using ::after pseudo-element) */
-  .tooltip::after {
-    content: attr(data-tooltip); /* Retrieves text from the data attribute */
-    visibility: hidden; /* Hidden by default */
-    opacity: 0; /* Hidden by default, useful for transitions */
-    
-    /* Positioning */
-    position: absolute;
-    bottom: 100%; /* Position above the hovered element */
-    left: 50%;
-    transform: translateX(-50%); /* Centers the tooltip horizontally */
-    width: 280px;
-    background-color: #242424;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    white-space: nowrap; /* Prevents text from wrapping */
-    
-    /* Smooth transition */
-    transition: opacity 0.3s ease-in-out; 
-  }
-
-  /* 3. Show the tooltip on hover */
-  .tooltip:hover::after {
-    visibility: visible;
+  100% {
     opacity: 1;
   }
+}
 
-
-  .movie-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-
-  .movie-card__container {
-        padding: 2px 16px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      max-width: 80%;
-
+  100% {
+    transform: rotate(360deg);
   }
-
-  .movie__card--img{
-      border-radius: 6px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
-
-
-  .movie__search--label {
-    font-size: 46px;
-    text-align: center;
-    margin-bottom: 36px;
-    letter-spacing: 8px;
-
-  }
-
-  .movie__search--container {
-    display: block;
-    z-index: 10;
-    margin: 5rem;
-    
-  }
-
-  .loading {
-    display: none;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: calc(100%/3);
-  }
-
-  .movies__loading {
-    display: block;
-
-  }
-
-  /* 
-  .movies__loading {
-    display: block;
-  border: 10px solid orange;
-  } */
-
-  .product__content{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    /* border: 2px solid red; */
-    padding: 2rem;
-    /* margin: auto; */
-      /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-
-  }
-
-  .product__card--img {
-    width: 90px;
-    height: 90px;
-    overflow: hidden;
-    animation: spin 2000ms infinite linear;
-    margin-bottom: 2rem;
-  }
-
-  .product__title,
-  .product__desc,
-  .product__detail {
-    position: relative;
-    height: 14px;
-    background: linear-gradient(90deg, #f0f0f0, #e6e6e6);
-    border-radius: 4px;
-    animation: pulse 1.5s infinite alternate;
-  }
-
-  .product__title {
-    width: 50%;
-  }
-  .product__desc {
-    width: 65%;
-  }
-
-  .product__detail {
-    width: 90%;
-  }
-
-
-  @keyframes pulse {
-    0% {
-      opacity: 0.6;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+}
