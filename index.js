@@ -148,9 +148,9 @@ async function getMovies(searchTerm) {
     moviesListEl.innerHTML = allMovies
       .map((info) => {
 
-        return ` <div class="movie__card">
-                  <div class="movie__card--container">
-                  <img src=${info.Poster} class="card-img">
+        return ` <div class="movie__card--container">
+                  <div class="movie__card">
+                  <img src=${info.Poster} class="movie__card--img">
                     <h3>${info.Title}</h3>
                       <p>${info.Year}</p>
                       <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
