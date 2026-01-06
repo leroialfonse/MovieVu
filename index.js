@@ -119,7 +119,7 @@ let movies;
 
 const moviesWrapper = document.querySelector(".movies");
 const loading = document.querySelector(".loading");
-const moviesListEl = document.querySelector(".movie-list");
+const moviesListEl = document.querySelector(".movie__list");
 const input = document.querySelector("#search-input");
 const results = document.querySelector(".results");
 
@@ -147,12 +147,13 @@ async function getMovies(searchTerm) {
   setTimeout(() => {
     moviesListEl.innerHTML = allMovies
       .map((info) => {
-        return ` <div class="movie-card">
-                  <div class="movie-card__container">
+
+        return ` <div class="movie__card">
+                  <div class="movie__card--container">
                   <img src=${info.Poster} class="card-img">
-                    <h3>${info.Title}</h4>
+                    <h3>${info.Title}</h3>
                       <p>${info.Year}</p>
-                      <p class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</p>
+                      <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
                   </div>
                 </div>`;
       })
@@ -160,8 +161,10 @@ async function getMovies(searchTerm) {
       .join("");
     loading.classList.remove("movies__loading");
     results.classList.remove("movies__loading");
-  }, 2000);
+  }, 3000);
+
 }
+
 
 getMovies();
 

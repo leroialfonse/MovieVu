@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   color: #fff;
@@ -205,55 +204,74 @@ input {
   justify-content: space-between;
 } */
 
-.movie-list,
-.grid {
+.movie__list
+/* .grid */ {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 12px 8px;
-  padding: 10px;
+  align-items:center;
+  padding: 12px;
 }
 
-.movie {
+/* .movie {
   /* width: 100%; */
-/* border: 10px solid orange; */
+  /* border: 10px solid orange; 
+} */
 
+.grid {
+  display: grid;
+  /* Creates 3 columns of equal width (1fr) */
+  grid-template-columns: repeat(3, 1fr);
+  /* Creates 2 rows of equal height (1fr) */
+  grid-template-rows: repeat(2, 1fr);
+  /* Adds space between the grid items */
+  gap: 10px;
+  /* Optional: sets a fixed height for the container to demonstrate row sizing */
+  height: 1200px;
+  /* Optional: centers the grid within the viewport */
+  margin: 0 auto;
+  max-width: 1165px;
+  /* max-height: 1270px;  */
 }
 
-/* .grid{
-  display: flex;
-  display: flex;
-  flex-wrap: wrap ;
-  /* border: 10px solid orange; */
-  /* width: calc(100-); */
-  /* border: 2px solid red; */
-/* } */
+.grid__box {
+  padding: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
 
-.movie-card {
+
+
+.movie__card--container
+{
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 10px;
   transition: 0.3s;
   cursor: pointer;
   border-radius: 10px;
-  max-width: calc(100% / 3);
+}
+
+.movie__card{
+  /* border: 1px solid blue; */
+  padding:4px;
 }
 
 
-.movie-card h3 {
-  width: 90%;
+.movie__card h3 {
+  width: 80%;
+  text-align: center;
 }
 
-.movie-card h3,
+.movie__card h3,
 p {
   color: #242424;
   text-align: center;
   font-weight: 600;
-
 }
 
-.tooltip{
-  color:#929aa6;
+.tooltip {
+  color: #929aa6;
   cursor: not-allowed;
 }
 
@@ -269,23 +287,23 @@ p {
   content: attr(data-tooltip); /* Retrieves text from the data attribute */
   visibility: hidden; /* Hidden by default */
   opacity: 0; /* Hidden by default, useful for transitions */
-  
+
   /* Positioning */
   position: absolute;
   bottom: 100%; /* Position above the hovered element */
   left: 50%;
   transform: translateX(-50%); /* Centers the tooltip horizontally */
-  
-  width: auto;
+
+  width: 260px;
   background-color: black;
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
   white-space: nowrap; /* Prevents text from wrapping */
-  
+
   /* Smooth transition */
-  transition: opacity 0.3s ease-in-out; 
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* 3. Show the tooltip on hover */
@@ -294,18 +312,18 @@ p {
   opacity: 1;
 }
 
-
-.movie-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.movie__card:hover {
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 6px; */
+  transform: scale(1.1);
 }
 
-.movie-card__container {
+.movie__card--container {
   padding: 2px 16px;
-
 }
 
-.card-img{
-  width:90%;
+.card-img {
+  width: 90%;
   margin: 2px;
   text-align: center;
   border: 2px solid green;
@@ -317,31 +335,37 @@ p {
   text-align: center;
   margin-bottom: 36px;
   letter-spacing: 8px;
-
 }
 
 .movie__search--container {
   display: block;
   z-index: 10;
   margin: 5rem;
-  
 }
 
 .loading {
   display: none;
-
 }
 
 .movies__loading {
   display: block;
 }
 
-
 .movies__loading .movies__loading--img {
   display: block;
-border: 10px solid orange;
 }
 
+.product__card{
+  padding: 16px;
+  margin-top: 24px;
+}
+
+
+.product__content {
+  width: 80%;
+  /* display: flex;
+  flex-direction: column; */
+}
 
 .product__card--img {
   width: 90px;
@@ -349,7 +373,7 @@ border: 10px solid orange;
   position: relative;
   overflow: hidden;
   animation: spin 2000ms infinite linear;
-  margin-bottom: 2rem;
+  margin-bottom: 9rem;
 }
 
 .product__title,
@@ -362,16 +386,16 @@ border: 10px solid orange;
 }
 
 .product__title {
-  width: 50%;
+  width: 40%;
+  color: green;
 }
 .product__desc {
-  width: 70%;
+  width: 60%;
 }
 
 .product__detail {
   width: 90%;
 }
-
 
 @keyframes pulse {
   0% {
