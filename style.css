@@ -205,7 +205,8 @@ input {
   justify-content: space-between;
 } */
 
-.movie-list {
+.movie-list,
+.grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -214,10 +215,19 @@ input {
 }
 
 .movie {
-  width: 100%;
+  /* width: 100%; */
 /* border: 10px solid orange; */
 
 }
+
+/* .grid{
+  display: flex;
+  display: flex;
+  flex-wrap: wrap ;
+  /* border: 10px solid orange; */
+  /* width: calc(100-); */
+  /* border: 2px solid red; */
+/* } */
 
 .movie-card {
   background-color: #fff;
