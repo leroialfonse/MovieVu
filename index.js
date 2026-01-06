@@ -120,6 +120,7 @@ let movies;
 const moviesWrapper = document.querySelector(".movies");
 const loading = document.querySelector(".loading");
 const moviesListEl = document.querySelector(".movie__list");
+const newEl = document.querySelector(".newPage");
 const input = document.querySelector("#search-input");
 const results = document.querySelector(".results");
 
@@ -168,3 +169,44 @@ async function getMovies(searchTerm) {
 
 getMovies();
 
+// // Pulling up a random movie to suggest a watch... It works right now. I'll code up the landing for the result later.
+// async function getRandomMovie(max) {
+
+
+//  let random = Math.floor(Math.random() * max);
+//  console.log(random)
+
+//  let result = await fetch(
+//     `http://www.omdbapi.com/?apikey=ac26afe9&s=dragon&page=${random}`//
+
+//   )
+
+  
+// console.log(result)
+
+//  let moviesChosen  =  await result.json();
+ 
+//  let page = moviesChosen.Search[3];
+
+// //  setTimeout(() => {
+//   moviesListEl.innerHTML = 
+//     // suggestedMovieEl.innerHTML = page
+//       // .map((info) => {
+
+//          ` <div class="movie__card--container">
+//                   <div class="movie__card">
+//                   <img src=${page.Poster} class="movie__card--img">
+//                     <h3>${page.Title}</h3>
+//                       <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
+//                   </div>
+//                 </div>`;
+//       // })
+//       // .slice(0, 6)
+//       // .join("");
+// //  },2000)
+// //  console.log(page[2].Title, page[2].Poster)
+// console.log(page)
+ 
+// }
+
+// getRandomMovie(99)

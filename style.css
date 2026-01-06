@@ -273,22 +273,22 @@ input {
 .movie__card h3 {
   width: 70%;
   text-align: center;
+  font-size: x-large  ;
+  font-weight: 600;
+
 }
 
 .movie__card h3,
 p {
   color: #242424;
   text-align: center;
-  font-weight: 600;
 }
 
-.tooltip {
-  color: #929aa6;
-  cursor: not-allowed;
-}
+
 
 /* 1. The container needs relative positioning */
 .tooltip {
+  color: #929aa6;
   position: relative;
   display: inline-block; /* Allows the element to wrap its content */
   cursor: help; /* Optional: changes the cursor to a question mark */
