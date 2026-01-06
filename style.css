@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: rgb(245,245,245);
 }
 
 h2 {
@@ -17,12 +18,17 @@ h2 {
   padding: 0 20px;
 }
 
+.bold{
+  font-weight: 700;
+}
+
 a {
   text-decoration: none;
 }
 
 li {
   margin: 0 12px;
+  padding: 2px 6px;
 }
 
 .container {
@@ -84,6 +90,7 @@ header {
 .header__logo--img {
   height: 160px;
   width: 200px;
+  margin-right: -40px;
 }
 
 nav {
@@ -94,11 +101,12 @@ nav {
 }
 
 .header__links {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 24px;
+      list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    width: 30%;
 }
 
 .contact {
@@ -143,6 +151,7 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* height: 100vh; */
 }
 
 /*Header*/
@@ -197,6 +206,7 @@ input {
 .results {
   position: relative;
   top: 300px;
+  height: 100vh;
 }
 
 /* .selections {
@@ -257,6 +267,7 @@ input {
     flex-direction: column;
     max-width: calc(100% / 4);
     min-height: 40rem;
+    max-height: 40rem;
 }
 
 .movie__card{
@@ -285,6 +296,7 @@ p {
 }
 
 
+/* Showtimes Tooltip */
 
 /* 1. The container needs relative positioning */
 .tooltip {
@@ -325,8 +337,8 @@ p {
 }
 
 .movie__card--container:hover {
-  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 6px; */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
   transform: scale(1.1);
 }
 
