@@ -86,7 +86,8 @@ header {
   font-size: 48px;
   font-weight: 300;
 }
-.header__logo--img {
+.header__logo--img,
+.footer__logo--img {
   height: 90px;
   width: 90px;
   filter:invert(1);
@@ -109,13 +110,13 @@ nav {
 }
 
 .contact {
-  background-color: green;
+  background-color: #d3261d;
   border-radius: 24px;
   padding: 8px 12px;
 }
 
 .contact:hover {
-  background-color: rgb(9, 74, 9);
+  background-color: #340a08;
   transform: scale(1.1);
 }
 
@@ -142,8 +143,8 @@ nav {
     /* Adjust top, left, right, or bottom to place the image exactly where you want it */
     /* left: 90px; Example: 5px from the left edge */
     right: 20%;
-    top: 40%; /* Example: vertical centering */
-    transform: translateY(-40%); /* Example: perfect vertical centering */
+    top: 20px; /* Example: vertical centering */
+    /* transform: translateY(-40%); Example: perfect vertical centering */
     /* Set a small size for the icon */
     /* width: 10px; Adjust as needed */
     height: 10px;
