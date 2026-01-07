@@ -79,6 +79,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 16px;
 }
 
 .header__logo--title {
@@ -86,9 +87,10 @@ header {
   font-weight: 300;
 }
 .header__logo--img {
-  height: 160px;
-  width: 200px;
-  margin-right: -40px;
+  height: 90px;
+  width: 90px;
+  filter:invert(1);
+
 }
 
 nav {
@@ -582,7 +584,34 @@ padding: 18px ;
 
 
 /* SMALL PHONES, LARGE SMARTPHONES */
+@media(max-width: 560px){
+  header{
+    /* display:flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+
+  .header__logo--brand{
+    /* margin: 16px;  */
+   
+  }
+
+
+  .header__links{
+    display: none;
+  }
+}
+
+
 @media (max-width: 550px) {
+
+  .header__logo--img{
+    height: 60px;
+    width: 60px;
+  }
+
+ 
+
     .movie__card--container{
     min-width: 70%;
     height: 100vh;
