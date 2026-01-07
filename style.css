@@ -206,7 +206,6 @@ input {
 .results {
   position: relative;
   top: 300px;
-  height: 100vh;
 }
 
 /* .selections {
@@ -459,15 +458,22 @@ p {
     font-size: 16px;
   }
 
-  .movie__list{
+  .movie__list,
+  .grid{
     display: flex;
     flex-direction: column;
   }
 
-  .movie__card--container{
+  .grid{
+    align-items: center;
+  }
 
-
+  .movie__card--container {
     min-width: 45%;
+  }
+
+  .grid__box{
+    min-width: 40%;
   }
 
   .movie__card--img{
@@ -486,6 +492,17 @@ p {
     height: 100vh;
   }
  
+
+  .grid{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-box{
+   min-width: 50%;
+  }
+
+
 
   .movie__card--img{
     max-width: 110%;

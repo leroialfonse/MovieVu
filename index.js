@@ -162,7 +162,7 @@ async function getMovies(searchTerm) {
       .join("");
     loading.classList.remove("movies__loading");
     results.classList.remove("movies__loading");
-  }, 3000);
+  }, 300000);
 
 }
 
