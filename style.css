@@ -471,6 +471,15 @@ p {
   }
 }
 
+@keyframes short-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Footer */
 
 footer{
@@ -496,6 +505,13 @@ padding: 18px ;
     filter: invert(1);
      height: 90px;
     width: 90px;
+    /* animation: short-spin 2000ms linear ease-in-out; */
+}
+
+.footer__logo--img:hover{
+  animation: spin 2000ms  linear;
+
+
 }
 
 .footer__social--list{
