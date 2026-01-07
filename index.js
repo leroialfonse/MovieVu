@@ -25,10 +25,9 @@ async function getMovies(searchTerm) {
   results.classList.add("movies__loading");
   moviesListEl.innerHTML = "";
   const movies = await fetch(
-    // OMDB API doesn't allow secure protocol? Maybe I need cors...?
-    // `https://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
+    `https://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
     // For cloning the repo.
-    `http://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
+    // `http://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
   );
   const moviesData = await movies.json();
   //   Had to drill down one more level through the omdbapi to expose the array.
