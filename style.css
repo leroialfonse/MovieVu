@@ -5,6 +5,11 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.favicon{
+  height: 300px;
+  width: 300px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -57,8 +62,8 @@ header {
   right: 0;
   height: 440px;
   margin-bottom: 120px;
-  width: 100%;
-  min-width:550px;
+  /* width: 100%; */
+  /* min-width:550px; */
 }
 
 .overlay {
@@ -439,7 +444,7 @@ p {
 .product__desc,
 .product__detail {
   height: 14px;
-  background: linear-gradient(90deg, #f0f0f0, #e6e6e6);
+  background: linear-gradient(90deg, #9a9797, #575757);
   border-radius: 4px;
   animation: pulse 1.5s infinite alternate;
 }

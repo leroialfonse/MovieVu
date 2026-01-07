@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon Data-->
+   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+
     <title>MovieVu</title>
     <!-- My javascript -->
     <script src="index.js" defer></script>
@@ -48,17 +55,21 @@
           <label class="movie__search--label">Find Your Movie</label>
 
           <!-- Trying a differnt input -->
-          
+
           <!--  -->
-           <div class="input-wrap">
+          <div class="input-wrap">
             <div class="input-container">
-                <input type="text" id="search-input" placeholder="Search Movies by Title...">
-                <!-- <img src="your-icon.png" alt="icon"> -->
-                        <i
-                          class="fa-solid fa-magnifying-glass mag"
-                          style="color: #d3261d"
-                          onclick="searchMovies()"
-                        ></i>
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search Movies by Title..."
+              />
+              <!-- <img src="your-icon.png" alt="icon"> -->
+              <i
+                class="fa-solid fa-magnifying-glass mag"
+                style="color: #d3261d"
+                onclick="searchMovies()"
+              ></i>
             </div>
             <!-- <input
               type="text"
@@ -72,7 +83,7 @@
               onclick="searchMovies()"
               onkeypress="Enter"
             ></i> -->
-          </div> 
+          </div>
         </section>
       </div>
     </div>
