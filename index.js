@@ -153,8 +153,10 @@ async function getMovies(searchTerm) {
                   <div class="movie__card">
                   <img src=${info.Poster} class="movie__card--img">
                     <h3>${info.Title}</h3>
-                      <p>${info.Year}</p>
-                      <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
+                      <div class=movie__card--desc>
+                        <p>${info.Year}</p>
+                        <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
+                      </div>
                   </div>
                 </div>`;
       })
@@ -162,7 +164,7 @@ async function getMovies(searchTerm) {
       .join("");
     loading.classList.remove("movies__loading");
     results.classList.remove("movies__loading");
-  }, 300000);
+  }, 3000);
 
 }
 

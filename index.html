@@ -24,14 +24,20 @@
               class="header__logo--img"
               alt="MovieVue Camera"
             />
-            <h1 class="header__logo--title">movie<span class="bold">Vu</span></h1>
+            <h1 class="header__logo--title">
+              movie<span class="bold">Vu</span>
+            </h1>
           </div>
         </div>
         <ul class="header__links">
           <li><a href="#search-input">Search Movies</a></li>
-<!--  I plan to implement this feature later.-->
+          <!--  I plan to implement this feature later.-->
           <!-- <li onclick="getRandomMovie()"><a href="#search-input">Search Movies</a></li> -->
-          <li class="contact"><a href="assets/Brandon White Resume.pdf" target="_blank">Contact</a></li>
+          <li class="contact">
+            <a href="assets/Brandon White Resume.pdf" target="_blank"
+              >Contact</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -41,8 +47,21 @@
         <section id="search">
           <label class="movie__search--label">Find Your Movie</label>
 
-          <div class="input-wrap">
-            <input
+          <!-- Trying a differnt input -->
+          
+          <!--  -->
+           <div class="input-wrap">
+            <div class="input-container">
+                <input type="text" placeholder="Search Movies by Title...">
+                <!-- <img src="your-icon.png" alt="icon"> -->
+                        <i
+                          class="fa-solid fa-magnifying-glass mag"
+                          style="color: #b197fc"
+                          onclick="searchMovies()"
+                          onkeypress="Enter"
+                        ></i>
+            </div>
+            <!-- <input
               type="text"
               id="search-input"
               name=""
@@ -52,8 +71,9 @@
               class="fa-solid fa-magnifying-glass mag"
               style="color: #b197fc"
               onclick="searchMovies()"
-            ></i>
-          </div>
+              onkeypress="Enter"
+            ></i> -->
+          </div> 
         </section>
       </div>
     </div>
@@ -179,9 +199,7 @@
 
           <!--  -->
 
-
           <!-- New Page -->
-
 
           <!-- <div class="newPage"></div> -->
         </div>
@@ -212,38 +230,52 @@
       <!-- </div> -->
     </div>
 
-     <footer>
-        <div class="container">
-            <div class="row footer__row">
-            <figure>
-                <img src="/assets/simplelogo.png" class="footer__logo--img" alt="">
-            </figure>
-        <div class="footer__social--list">
-            <a href="https://github.com/leroialfonse" target="_blank" class="footer__social--link
-            link__hover-effect
-            link__hover-effect--white">
-            Github
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure class="footer__figure">
+            <img
+              src="/assets/stripoll.png"
+              class="footer__logo--img"
+              alt="MovieVu Reel"
+            />
+            <h1 class="header__logo--title">
+              movie<span class="bold">Vu</span>
+            </h1>
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/leroialfonse"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Github
             </a>
-            <a href="https://www.linkedin.com/in/brandon-white-dev/"  target="_blank" class="footer__social--link
-            link__hover-effect
-            link__hover-effect--white">
-            LinkedIn
+            <a
+              href="https://www.linkedin.com/in/brandon-white-dev/"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              LinkedIn
             </a>
-            <a href="" class="footer__social--link
-            link__hover-effect
-            link__hover-effect--white" onclick="toggleModal()">
-            Contact
+            <!-- <a href="" class="footer__social--link
+              link__hover-effect
+              link__hover-effect--white" onclick="toggleModal()">
+              Contact
+              </a> -->
+            <a
+              href="assets/Brandon White Resume.pdf"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Resume
             </a>
-            <a href="assets/David Bragg Resume.pdf" target="_blank" class="footer__social--link
-            link__hover-effect
-            link__hover-effect--white">
-            Resume
-            </a>
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2025 Brandon White
+          </div>
         </div>
-        <div class="footer__copyright">Copyright &copy; 2025 Brandon White</div>
-        </div>
-        </div>
-
+      </div>
     </footer>
   </body>
 </html>
