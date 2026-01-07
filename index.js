@@ -139,7 +139,7 @@ async function getMovies(searchTerm) {
   results.classList.add("movies__loading");
   moviesListEl.innerHTML = "";
   const movies = await fetch(
-    `http://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
+    `https://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
   );
   const moviesData = await movies.json();
   //   Had to drill down one more level through the omdbapi to expose the array.
