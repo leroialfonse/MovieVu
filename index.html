@@ -54,9 +54,6 @@
         <section id="search">
           <label class="movie__search--label">Find Your Movie</label>
 
-          <!-- Trying a differnt input -->
-
-          <!--  -->
           <div class="input-wrap">
             <div class="input-container">
               <input
@@ -64,25 +61,12 @@
                 id="search-input"
                 placeholder="Search Movies by Title..."
               />
-              <!-- <img src="your-icon.png" alt="icon"> -->
               <i
                 class="fa-solid fa-magnifying-glass mag"
                 style="color: #d3261d"
                 onclick="searchMovies()"
               ></i>
             </div>
-            <!-- <input
-              type="text"
-              id="search-input"
-              name=""
-              placeholder="Search By Movie Title"
-            />
-            <i
-              class="fa-solid fa-magnifying-glass mag"
-              style="color: #b197fc"
-              onclick="searchMovies()"
-              onkeypress="Enter"
-            ></i> -->
           </div>
         </section>
       </div>
@@ -95,8 +79,8 @@
         <div class="results__header--filter">
             <select  name="movie filter" id="sort" onchange="sortMovies(event)" >
                   <option value="" disabled selected>Sort by Release Year</option>
-                  <option value="OLDEST_TO_NEWEST">Oldest to Newest</option>
                   <option value="NEWEST_TO_OLDEST">Newest to Oldest</option>
+                  <option value="OLDEST_TO_NEWEST">Oldest to Newest</option>
                 </select>
                 </div>
         </div>
@@ -105,8 +89,8 @@
       <div class="loading">
         <div class="grid">
           <div class="grid__box">
-            <div class="product__card">
-              <!-- <div class="product__card--container"> -->
+            <!-- <div class="product__card--container"> -->
+              <div class="product__card">
               <div class="product__content">
                 <img
                   src="assets/movieReel.png"
@@ -175,8 +159,8 @@
                 <p class="product__desc"></p>
                 <p class="product__detail"></p>
               </div>
-              <!-- </div> -->
-            </div>
+              </div>
+            <!-- </div>  -->
           </div>
 
           <!--  -->
