@@ -1,15 +1,16 @@
 // Api key : 94961933
 // // Api - OMDB : http://www.omdbapi.com/?i=tt3896198&apikey=94961933
 
-let movies;
+// let movies;
 // let allMovies;
+
+let result
 
 // const moviesWrapper = document.querySelector(".movies");
 const loading = document.querySelector(".loading");
 const moviesListEl = document.querySelector(".movie__list");
 const newEl = document.querySelector(".newPage");
 const input = document.querySelector("#search-input");
-const results = document.querySelector(".results");
 
 function searchMovies() {
   let searchTerm = input.value;
@@ -22,19 +23,33 @@ function searchMovies() {
 
 let moviesHTML = "";
 
-async function getMovies(searchTerm) {
+async function displayMovies(filter) {
   loading.classList.add("movies__loading");
-  // results.classList.add("movies__loading");
-  moviesListEl.innerHTML = "";
 
-  const movies = await fetch(
-    `https://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
-    // For cloning the repo.
-    // `http://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
-  );
-  const moviesData = await movies.json();
-  //   Had to drill down one more level through the omdbapi to expose the array.
-  const allMovies = moviesData.Search;
+  if (result) {
+    let result = await getMovies();
+  }
+
+
+  if (filter === "NEWEST_TO_OLDEST") {
+    result.sort((a, b) => (a.Year) - (b.Year));
+    console.log("New");
+  } else if (filter === "OLDEST_TO_NEWEST") {
+    result.sort((a, b) => (b.Year) - (a.Year));
+    console.log("Old");
+  }
+
+  // // results.classList.add("movies__loading");
+  // moviesListEl.innerHTML = "";
+
+  // const movies = await fetch(
+  //   `https://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
+  //   // For cloning the repo.
+  //   // `http://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
+  // );
+  // const moviesData = await movies.json();
+  // //   Had to drill down one more level through the omdbapi to expose the array.
+  // const allMovies = moviesData.Search;
 
   // console.log(movies.json())
   // SetTimeout here, to trigger the data to display after a wait. Need the timer to block the appearance of the data.
@@ -61,57 +76,58 @@ async function getMovies(searchTerm) {
     // results.classList.remove("movies__loading");
     // }, 3000);
 
-     moviesHTML = allMovies
-      .map((movie) => {
-        return `<div class="movie__card--container">
-        <img class="movie__card--img" src="${movie.Poster}" alt="">
-        <h3>${movie.Title}</h3>
-    <div class="movie__card--desc">
-        <p>${movie.Year}</p>
-    </div>
-    <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
 
-</div>`;
-      })
-      .slice(0, 6)
-      .join("");
-    moviesListEl.innerHTML = moviesHTML;
+    const moviesHTML = result.map((movie) => {
+      return `<div class="movie__card--container">
+//         <img class="movie__card--img" src="${movie.Poster}" alt="">
+//         <h3>${movie.Title}</h3>
+//     <div class="movie__card--desc">
+//         <p>${movie.Year}</p>
+//     </div>
+//     <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
 
-  //   if(!movies){
-  //   movies =  getMovies();
-  // }
+// </div>`;
+    }).slice(0, 6)
+      .join('');
+    //       })
   
-  // if (filter === "NEWEST_TO_OLDEST"){
-  //   console.log(event.target.value)
-  // }else if ( filter === "OLDEST_TO_NEWEST") {
-  //   console.log(event.target.value)
+  //      const moviesHTML = allMovies.map((movie) => {
+  //         return `<div class="movie__card--container">
+  //         <img class="movie__card--img" src="${movie.Poster}" alt="">
+  //         <h3>${movie.Title}</h3>
+  //     <div class="movie__card--desc">
+  //         <p>${movie.Year}</p>
+  //     </div>
+  //     <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
 
-  // }
+  // </div>`;
+  //       })
+  //       .slice(0, 6)
+  //       .join("");
+  moviesListEl.innerHTML = moviesHTML;
 
-  // if (filter === "NEWEST_TO_OLDEST") {
-  //   //  movies.sort((a,b)=> (a.Year ) - (b.Year ));
-  //   console.log("New");
-  // } else if (filter === "OLDEST_TO_NEWEST") {
-  //   // movies.sort((a,b)=> (b.Year ) - (a.Year)) ;
-  //   console.log("Old");
-  // }
+
 
   loading.classList.remove("movies__loading");
-    // results.classList.remove("movies__loading");
-  }, 3000);
+}, 3000);
+
+
 
 }
 
-getMovies();
+displayMovies();
 
-async function sortMovies(event, filter) {
-  getMovies(event.target.value);
-  console.log(event.target.value)
-  
+// setTimeout(() => {
+//   getMovies();
+// }, 5000)
+
+
+async function sortMovies(event) {
+  displayMovies(event.target.value);
   // if(!movies){
   //   movies = await getMovies();
   // }
-  
+
   // if (filter === "NEWEST_TO_OLDEST"){
   //   console.log(event.target.value)
   // }else if ( filter === "OLDEST_TO_NEWEST") {
@@ -162,3 +178,27 @@ async function sortMovies(event, filter) {
 // }
 
 // getRandomMovie(99)
+
+
+// Re-written. I want this function to just go get me an array of movies.  I'll write a new function that will display that (data/an array) on the screen, and allow me to filter.
+async function getMovies(searchTerm) {
+
+  loading.classList.add("movies__loading");
+  // results.classList.add("movies__loading");
+  moviesListEl.innerHTML = "";
+
+  const movies = await fetch(
+    `https://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
+    // For cloning the repo.
+    // `http://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
+  );
+  const moviesData = await movies.json();
+  //   Had to drill down one more level through the omdbapi to expose the array.
+  const allMovies = moviesData;
+  result = moviesData.Search
+
+  console.log(result)
+
+}
+
+getMovies();
