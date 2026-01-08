@@ -2,14 +2,14 @@
 // // Api - OMDB : http://www.omdbapi.com/?i=tt3896198&apikey=94961933
 
 let movies;
+// let allMovies;
 
-const moviesWrapper = document.querySelector(".movies");
+// const moviesWrapper = document.querySelector(".movies");
 const loading = document.querySelector(".loading");
 const moviesListEl = document.querySelector(".movie__list");
 const newEl = document.querySelector(".newPage");
 const input = document.querySelector("#search-input");
 const results = document.querySelector(".results");
-
 
 function searchMovies() {
   let searchTerm = input.value;
@@ -20,10 +20,13 @@ function searchMovies() {
   getMovies(searchTerm);
 }
 
+let moviesHTML = "";
+
 async function getMovies(searchTerm) {
   loading.classList.add("movies__loading");
-  results.classList.add("movies__loading");
+  // results.classList.add("movies__loading");
   moviesListEl.innerHTML = "";
+
   const movies = await fetch(
     `https://www.omdbapi.com/?apikey=94961933&s=${searchTerm || "alone"}`
     // For cloning the repo.
@@ -32,36 +35,96 @@ async function getMovies(searchTerm) {
   const moviesData = await movies.json();
   //   Had to drill down one more level through the omdbapi to expose the array.
   const allMovies = moviesData.Search;
-  // SetTimeout here, to trigger the data to display after a wait. Need the timer to block the appearance of the data. 
-  setTimeout(() => {
-    moviesListEl.innerHTML = allMovies
-      .map((info) => {
 
-        return ` <div class="movie__card--container">
-                  <div class="movie__card">
-                  <img src=${info.Poster} class="movie__card--img">
-                    <h3>${info.Title}</h3>
-                      <div class=movie__card--desc>
-                        <p>${info.Year}</p>
-                        <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
-                      </div>
-                  </div>
-                </div>`;
+  // console.log(movies.json())
+  // SetTimeout here, to trigger the data to display after a wait. Need the timer to block the appearance of the data.
+  setTimeout(() => {
+    // moviesListEl.innerHTML = allMovies
+    // // console.log(typeof allMovies)}
+    // .map((info) =>
+    //   {
+
+    //     return ` <div class="movie__card--container">
+    //               <div class="movie__card">
+    //               <img src=${info.Poster} class="movie__card--img">
+    //                 <h3>${info.Title}</h3>
+    //                   <div class=movie__card--desc>
+    //                     <p>${info.Year}</p>
+    //                     <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
+    //                   </div>
+    //               </div>
+    //             </div>`;
+    //   })
+    //   .slice(0, 6)
+    //   .join("");
+    // loading.classList.remove("movies__loading");
+    // results.classList.remove("movies__loading");
+    // }, 3000);
+
+     moviesHTML = allMovies
+      .map((movie) => {
+        return `<div class="movie__card--container">
+        <img class="movie__card--img" src="${movie.Poster}" alt="">
+        <h3>${movie.Title}</h3>
+    <div class="movie__card--desc">
+        <p>${movie.Year}</p>
+    </div>
+    <span class="tooltip" data-tooltip="Showtime Selection coming soon!">See Showtimes</span>
+
+</div>`;
       })
       .slice(0, 6)
       .join("");
-    loading.classList.remove("movies__loading");
-    results.classList.remove("movies__loading");
+    moviesListEl.innerHTML = moviesHTML;
+
+  //   if(!movies){
+  //   movies =  getMovies();
+  // }
+  
+  // if (filter === "NEWEST_TO_OLDEST"){
+  //   console.log(event.target.value)
+  // }else if ( filter === "OLDEST_TO_NEWEST") {
+  //   console.log(event.target.value)
+
+  // }
+
+  // if (filter === "NEWEST_TO_OLDEST") {
+  //   //  movies.sort((a,b)=> (a.Year ) - (b.Year ));
+  //   console.log("New");
+  // } else if (filter === "OLDEST_TO_NEWEST") {
+  //   // movies.sort((a,b)=> (b.Year ) - (a.Year)) ;
+  //   console.log("Old");
+  // }
+
+  loading.classList.remove("movies__loading");
+    // results.classList.remove("movies__loading");
   }, 3000);
 
 }
 
-
 getMovies();
+
+async function sortMovies(event, filter) {
+  getMovies(event.target.value);
+  console.log(event.target.value)
+  
+  // if(!movies){
+  //   movies = await getMovies();
+  // }
+  
+  // if (filter === "NEWEST_TO_OLDEST"){
+  //   console.log(event.target.value)
+  // }else if ( filter === "OLDEST_TO_NEWEST") {
+  //   console.log(event.target.value)
+
+  // }
+}
+
+
+
 
 // // Pulling up a random movie to suggest a watch... It works right now. I'll code up the landing for the result later.
 // async function getRandomMovie(max) {
-
 
 //  let random = Math.floor(Math.random() * max);
 //  console.log(random)
@@ -71,15 +134,14 @@ getMovies();
 
 //   )
 
-  
 // console.log(result)
 
 //  let moviesChosen  =  await result.json();
- 
+
 //  let page = moviesChosen.Search[3];
 
 // //  setTimeout(() => {
-//   moviesListEl.innerHTML = 
+//   moviesListEl.innerHTML =
 //     // suggestedMovieEl.innerHTML = page
 //       // .map((info) => {
 
@@ -96,7 +158,7 @@ getMovies();
 // //  },2000)
 // //  console.log(page[2].Title, page[2].Poster)
 // console.log(page)
- 
+
 // }
 
 // getRandomMovie(99)
