@@ -17,12 +17,17 @@ body {
   background-color: rgb(245,245,245);
 }
 
+
+
 h2 {
   color: #d3261d;
   font-size: 36px;
   padding: 0 20px;
 }
 
+select{
+  line-height: 110%;
+}
 
 select, option{
   color: #252525;
@@ -136,33 +141,21 @@ nav {
     /* Set the container as the positioning reference point */
     position: relative; 
     left: 5%;
-    transform: translateY(-1%); /* Example: perfect vertical centering */
-
-    /* Make the container an inline block so it only takes up necessary width */
     width: 100%;
     max-width: 800px;
 }
 
 .input-container input {
     /* Add padding to the side where the image is, to prevent text from going under it */
-    /* padding-left: 10px; Adjust as needed */
+    padding-right: 1px;
 }
 
 .input-container .mag {
-    /* Position the image absolutely within its relative parent */
     position: absolute;
-    /* Adjust top, left, right, or bottom to place the image exactly where you want it */
-    /* left: 90px; Example: 5px from the left edge */
     right: 20%;
-    top: 20px; /* Example: vertical centering */
-    /* transform: translateY(-40%); Example: perfect vertical centering */
-    /* Set a small size for the icon */
-    /* width: 10px; Adjust as needed */
+    top: 20px; 
     height: 10px;
-    /* Ensure the icon is above the input field */
     z-index: 10; 
-    /* Add pointer-events: none if the image is just an icon and not clickable */
-    /* pointer-events: none; */
     font-size: 24px;
 }
 
@@ -200,7 +193,6 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* height: 100vh; */
 }
 
 /*Header*/
@@ -237,12 +229,6 @@ input {
   width: 100%;
 }
 
-/* .mag {
-  font-size: 36px;
-  bottom: 50px;
-  left: 360px;
-  cursor: pointer;
-} */
 
 .mag:hover {
   transform: scale(1.1);
@@ -262,44 +248,24 @@ input {
   align-items: center;
 }
 
-/* .results__header--filter{
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .selections {
-  display: flex;
-  justify-content: space-between;
-} */
 
 .movie__list
-/* .grid */ {
+{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items:center;
-  /* padding: 12px; */
 }
 
-/* .movie {
-  /* width: 100%; */
-  /* border: 10px solid orange; 
-} */
 
 .grid {
   display: grid;
-  /* Creates 3 columns of equal width (1fr) */
   grid-template-columns: repeat(3, 1fr);
-  /* Creates 2 rows of equal height (1fr) */
   grid-template-rows: repeat(2, 1fr);
-  /* Adds space between the grid items */
-  gap: 10px;
-  /* Optional: sets a fixed height for the container to demonstrate row sizing */
+  gap: 16px;
   height: 1200px;
-  /* Optional: centers the grid within the viewport */
   margin: 0 auto;
-  max-width: 1165px;
-  /* max-height: 1270px;  */
+  max-width: 900px;
 }
 
 .grid__box {
@@ -416,6 +382,7 @@ p {
   text-align: center;
   margin-bottom: 36px;
   letter-spacing: 8px;
+  font-weight: 600;
 }
 
 .movie__search--container {
@@ -579,15 +546,12 @@ padding: 18px ;
     font-size: 16px;
   }
 
-  .movie__list,
-  .grid{
+  .movie__list
+{
     display: flex;
     flex-direction: column;
   }
 
-  .grid{
-    align-items: center;
-  }
 
   .movie__card--container {
     min-width: 45%;
