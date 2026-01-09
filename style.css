@@ -58,6 +58,10 @@ li {
   max-width: 1200px;
 }
 
+
+
+
+
 /* Header */
 
 header {
@@ -572,16 +576,7 @@ padding: 18px ;
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media(max-width: 560px){
-  header{
-    /* display:flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-  }
-
-  .header__logo--brand{
-    /* margin: 16px;  */
-   
-  }
+  
 
 
   .header__links{
