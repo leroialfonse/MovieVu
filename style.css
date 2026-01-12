@@ -619,4 +619,16 @@ padding: 18px ;
     font-size: 32px;
     font-weight: 500;
   }
+
+  .container{
+    position: relative;
+  }
+
+  footer{
+    position: absolute;
+    top: 210rem;
+    width: 100%;
+
+
+  }
 }
